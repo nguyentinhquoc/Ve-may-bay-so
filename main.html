@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/app.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <header class="header header--info">
+    <div class="header__logo">
+      <img src="assets/svg/logoLight.svg" alt="" />
+    </div>
+    <div class="header__right">
+      <div class="header__actions">
+        <div class="header__action-item">
+          <img src="assets/svg/icons/header/search.svg" alt="" />
+        </div>
+        <div class="header__action-item">
+          <img src="assets/svg/icons/header/notification.svg" alt="" />
+        </div>
+        <div class="header__action-item">
+          <img src="assets/svg/icons/header/ticket.svg" alt="" />
+        </div>
+      </div>
+      <div class="header__user-ticket">
+        <div class="header__user-avatar">
+          <img src="assets/svg/icons/header/user.svg" alt="" />
+        </div>
+        <span class="header__username">Nguyen</span>
+        <div class="header__menu-toggle">
+          <img src="assets/svg/icons/header/kebabmMenu.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="bg-primary d-flex text-light justify-content-between">
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="#">Vé máy bay</a>
+          <ul>
+            <li>
+              <a href="#">List Flight</a>
+              <ul>
+                <li><a href="#">Passenger Inssssssfo</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="">Khách sạn</a></li>
+        <li><a href="">Tour</a></li>
+        <li><a href="">Vé sự kiện & du lịch</a></li>
+        <li><a href="">Đại lý</a></li>
+        <li><a href="">Khám phá</a></li>
+      </ul>
+    </div>
+    <div class="nav__right--icon d-flex">
+      <div>
+        <img src="assets/svg/icons/header/favebook.svg" alt="" />
+      </div>
+      <div>
+        <img src="assets/svg/icons/header/mess.svg" alt="" />
+      </div>
+      <div class="d-flex nav--numberPhone">
+        <div>
+          <img src="assets/svg/icons/header/phone.svg" alt="" />
+        </div>
+        <span>09.1900.5320</span>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="banner">
+      <img src="assets/image/Main/banner.png" alt="" />
+      <form class="form">
+        <div class="form__left">
+          <div class="form__flight-types">
+            <div class="form__flight-type">
+              <input type="radio" id="one-way" name="flight-type" class="form__checkbox" />
+              <label for="one-way" class="form__label b uppercase-text">Một chiều</label>
+            </div>
+            <div class="form__flight-type">
+              <input type="radio" id="round-trip" name="flight-type" class="form__checkbox" />
+              <label for="round-trip" class="form__label  b uppercase-text">Khứ hồi</label>
+            </div>
+            <div class="form__flight-type">
+              <input type="radio" id="multi-city" name="flight-type" class="form__checkbox" />
+              <label for="multi-city" class="form__label  b uppercase-text">Nhiều chặng</label>
+            </div>
+          </div>
+          <div class="journey-form journey-form-location btm ">
+            <div class="journey-box journey-box--departure  b uppercase-text">
+              <label for="departure"><img src="assets/svg/icons/plane_search.svg" alt="">Điểm đi: </label>
+              <p class="location-span">Ha Noi</p>
+            </div>
+            <div class="icon-togle">
+              <img src="assets/svg/icons/round-trip.svg" alt="">
+            </div>
+            <div class="journey-box journey-box--destination  b uppercase-text">
+              <label for="destination"><img src="assets/svg/icons/map_search.svg" alt="">Điểm đến:</label>
+              <p class="location-span">Ho Chi Minh</p>
+            </div>
+          </div>
+        </div>
+        <div class="form__right">
+          <div class="form__flight-info ">
+            <select name="class" id="flight-class">
+              <option value="economy">Hạng: Phổ thông</option>
+              <option value="business">Hạng: Thương gia</option>
+              <option value="first">Hạng: Hạng nhất</option>
+            </select>
+            <select name="promo" id="promo-code">
+              <option value="">Mã khuyến mãi</option>
+              <option value="PROMO1">PROMO1</option>
+              <option value="PROMO2">PROMO2</option>
+              <option value="PROMO3">PROMO3</option>
+            </select>
+          </div>
+          <div class="journey-form btm">
+            <div class="journey-box journey-box--date journey-date--departure b ">
+              <label for="departure-date"> <img src="assets/svg/icons/date_search.svg" alt="">Ngày đi</label><br>
+              <input type="date" id="departure-date">
+            </div>
+            <div class="journey-box journey-box--date journey-date--return b">
+              <label for="return-date"> <img src="assets/svg/icons/date_search.svg" alt="">Ngày đi</label><br>
+              <input type="date" id="return-date">
+            </div>
+
+            <div class="journey-box journey-box--customer">
+              <label for="date"><img src="assets/svg/icons/user_search.svg" alt=""> Hành Khách </label> <br>
+              <u> <span class="b">1</span> Người lớn, <span class="b">1</span> trẻ em, <span class="b">1</span> em
+                bé</u>
+            </div>
+            <button class=" journey-box--submit b">SUBMIT</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div>
+      <div class="content">
+        <section class="best-price-flights m-80 ">
+          <div class="d-flex justify-content-between">
+            <h5 class="uppercase-text text-primary">Chuyến bay có giá tốt</h5>
+            <ul class="d-flex list-none-style text-primary">
+              <li>Asia</li>
+              <li>Africa</li>
+              <li>Euro</li>
+              <li>America</li>
+            </ul>
+          </div>
+          <p class="text-info">Save up to $400 per person</p>
+        </section>
+      </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__widgets">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="assets/svg/icons/foooter/tickit.svg" alt="" />
+        </div>
+        <div class="footer__slogan">
+          <ul>
+            <li class="footer__member-text">MEMBER OF PROTECH GROUP</li>
+            <li class="footer__brand-desc">
+              The most prestigious ticket booking website in Vietnam
+            </li>
+          </ul>
+        </div>
+        <div class="footer__divider">
+          <hr />
+        </div>
+        <div class="footer__qr-list">
+          <div class="footer__qr-item">
+            <img src="assets/svg/icons/foooter/qr1.svg" alt="" />
+          </div>
+          <div class="footer__qr-item">
+            <img src="assets/svg/icons/foooter/qr2.svg" alt="" />
+          </div>
+          <div class="footer__qr-item">
+            <img src="assets/svg/icons/foooter/qr3.svg" alt="" />
+          </div>
+          <div class="footer__qr-item">
+            <img src="assets/svg/icons/foooter/qr4.svg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__nav">
+        <ul class="footer__menu">
+          <h5 class="footer__menu-title">About Us</h5>
+          <li class="footer__menu-item"><a href="#">Introduction</a></li>
+          <li class="footer__menu-item"><a href="#">Customer reviews</a></li>
+          <li class="footer__menu-item">
+            <a href="#">Operational Regulations</a>
+          </li>
+          <li class="footer__menu-item">
+            <a href="#">Information privacy policy</a>
+          </li>
+          <li class="footer__menu-item"><a href="#">Partners</a></li>
+          <li class="footer__menu-item"><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__nav">
+        <ul class="footer__menu">
+          <h5 class="footer__menu-title">Tutorials & Help</h5>
+          <li class="footer__menu-item">
+            <a href="#">Frequently asked questions</a>
+          </li>
+          <li class="footer__menu-item">
+            <a href="#">Ticket booking guide</a>
+          </li>
+          <li class="footer__menu-item"><a href="#">Payment Guide</a></li>
+          <li class="footer__menu-item"><a href="#">Review your order</a></li>
+          <li class="footer__menu-item"><a href="#">Print e-tickets</a></li>
+          <li class="footer__menu-item">
+            <a href="#">Feedback about orders</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <div class="footer__contact-info">
+          <span class="footer__phone">09 1900 5320</span>
+          <p class="footer__hotline">Hotline 24/7</p>
+          <p class="footer__company">
+            PROSPERITY TOURISM AND TECHNOLOGY GROUP JOINT STOCK COMPANY
+          </p>
+          <p class="footer__address">
+            No. 19 Alley 5, Do Nha Street, Tay Mo Ward, Nam Tu Liem District,
+            Hanoi City, Vietnam
+          </p>
+        </div>
+        <form class="footer__subscribe">
+          <input type="email" class="footer__subscribe-input" placeholder="Enter your email" />
+          <input type="submit" class="footer__subscribe-button" value="Subscribe" />
+        </form>
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      <span class="footer__copyright-text">©2023 Pro Tech Group</span>
+      <div class="footer__copyright-links">
+        <span class="footer__copyright-link"><a href="https://www.vemaybayso.vn">www.vemaybayso.vn</a></span>
+        <span class="footer__copyright-link"><a href="https://www.tickit.vn">www.tickit.vn</a></span>
+        <span class="footer__copyright-link"><a href="https://www.evoucher.vn">www.evoucher.vn</a></span>
+        <span class="footer__copyright-link"><a href="https://www.protravel.vn">www.protravel.vn</a></span>
+      </div>
+      <div class="footer__copyright-legal">
+        <span class="footer__copyright-legal-link"><a href="#">Privacy</a></span>
+        <span class="footer__copyright-legal-link"><a href="#">Terms & conditions</a></span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
