@@ -9,7 +9,7 @@
 
   .best-price-flights .agent-list-content_1 {
     display: flex;
-    /* gap: 20px; */
+    margin-bottom: 1px;
     transition: transform 0.5s ease-in-out;
   }
 
