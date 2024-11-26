@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/app.css">
+    <link rel="stylesheet" href="./assets/css/filghtAddNew.css">
+    <title>FlightLists</title>
+</head>
+
+<body>
+    <!-- <header class="header bg-info">
+        <div class="header__logo">
+            <img src="assets/svg/logoLight.svg" alt="" />
+        </div>
+        <div class="header__right">
+            <div class="header__actions">
+                <div class="header__action-item">
+                    <img src="assets/svg/icons/header/search.svg" alt="" />
+                </div>
+                <div class="header__action-item">
+                    <img src="assets/svg/icons/header/notification.svg" alt="" />
+                </div>
+                <div class="header__action-item">
+                    <img src="assets/svg/icons/header/ticket.svg" alt="" />
+                </div>
+            </div>
+            <div class="header__user-ticket">
+                <div class="header__user-avatar">
+                    <img src="assets/svg/icons/header/user.svg" alt="" />
+                </div>
+                <span class="header__username">Nguyen</span>
+                <div class="header__menu-toggle">
+                    <img src="assets/svg/icons/header/kebabmMenu.svg" alt="" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="bg-primary d-flex text-light justify-content-between">
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="#">Vé máy bay</a>
+                    <ul>
+                        <li>
+                            <a href="#">List Flight</a>
+                            <ul>
+                                <li><a href="#">Passenger Inssssssfo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Khách sạn</a></li>
+                <li><a href="">Tour</a></li>
+                <li><a href="">Vé sự kiện & du lịch</a></li>
+                <li><a href="">Đại lý</a></li>
+                <li><a href="">Khám phá</a></li>
+            </ul>
+        </div>
+        <div class="nav__right--icon d-flex">
+            <div>
+                <img src="assets/svg/icons/header/favebook.svg" alt="" />
+            </div>
+            <div>
+                <img src="assets/svg/icons/header/mess.svg" alt="" />
+            </div>
+            <div class="d-flex nav--numberPhone">
+                <div>
+                    <img src="assets/svg/icons/header/phone.svg" alt="" />
+                </div>
+                <span>09.1900.5320</span>
+            </div>
+        </div>
+    </nav> -->
+    <main>
+        <section>
+            <div class="flight   d-flex justify-content-between">
+                <div class="flight-left">
+                    <div class="menu-flight padding-15">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="text-primary">MENU</h6>
+                            <span><img src="./assets/svg/icons/FilightLists/menu-seting.svg" alt=""></span>
+                        </div>
+                        <div class="menu-section">
+                            <div class="text-info d-flex justify-content-between">
+                                <div>
+                                    Vé siêu tiết kiệm
+                                </div>
+                                <div><img src="./assets/svg/icons/FilightLists/drop-button.svg" alt=""></div>
+                            </div>
+                            <ul class="list-none-style">
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="stk-1">
+                                    <label class="text-primary" for="stk-1">Quản lý vé siêu tiết kiệm</label>
+                                </li>
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="stk-2">
+                                    <label class="text-primary" for="stk-2">Quản lý chính sách vé STK</label>
+                                </li>
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="stk-3">
+                                    <label class="text-primary" for="stk-3">Cấu hình chính sách bán</label>
+                                </li>
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="stk-4">
+                                    <label class="text-primary" for="stk-4">xyz...</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-section">
+                            <div class="text-info d-flex justify-content-between">
+                                <div>Vé Sự kiện và Du lịch</div>
+                                <div><img src="./assets/svg/icons/FilightLists/drop-button.svg" alt=""></div>
+
+                            </div>
+                            <ul class="list-none-style">
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="skdl-1">
+                                    <label class="text-primary" for="skdl-1">Quản lý nhà cung cấp</label>
+                                </li>
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="skdl-2">
+                                    <label class="text-primary" for="skdl-2">Quản lý Vé Sự kiện & Du lịch</label>
+                                </li>
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="skdl-3">
+                                    <label class="text-primary" for="skdl-3">Quản lý chính sách vé SKDL</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flight-right">
+                    <div class="right-section padding-15 ">
+                        <div class="border-button d-flex justify-content-between">
+                            <div>
+                                <div class="text-info">
+                                    Tạo mới vé siêu tiết kiệm
+                                </div>
+                                <p class="text-info">Áp dụng biểu giá riêng đã bao gồm thuế phí </p>
+                            </div>
+                            <div class="text-danger">
+                                (*) Thông tin bắt buộc
+                            </div>
+
+                        </div>
+                        <div class="border-button">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="text-primary">GIỚI THIỆU ĐIỂM ĐẾN:</h6>
+                                <span>
+                                    <div class="toggle-switch" onclick="toggleSwitch(this)">
+                                        <div class="toggle-circle"></div>
+                                    </div>
+
+                                </span>
+                            </div>
+                            <div class="select-container">
+                                <label for="destination-select">Chọn điểm đến có sẵn:</label>
+                                <div class="select-wrapper">
+                                    <select class="text-primary" id="destination-select">
+                                        <option value="1">Giới thiệu về Điện Biên</option>
+                                        <option value="2">Điện Biên Phủ</option>
+                                        <option value="3">Lịch sử Điện Biên</option>
+                                        <option value="4">Du lịch Điện Biên</option>
+                                    </select>
+                                    <div class="add-option">
+                                        <span>+ Thêm</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="text-info">Giớ thiệu về Điện Biên x </span>
+                            </div>
+                            <span class="end-add">+ Tạo mới điểm đến</span>
+                        </div>
+                    </div>
+                    <!-- Chặng đi -->
+                    <div class="padding-15 ">
+                        <h6 class="text-primary">CHẶNG ĐI:</h6>
+                        <div class="d-flex justify-content-between">
+                            <div class="info-box">
+                                <label class="info-label text-info">Điểm khởi hành: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content  text-primary">Hà Nội</div>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Ngày giờ khởi hành: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Thứ 4, 15:50:00 -23/09/2024 </p>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Ngày giờ hạ cánh: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Thứ 4, 15:50:00 -23/09/2024 </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="info-box">
+                                <label class="info-label text-info">Điểm đến: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content  text-primary">TP. Hồ Chí Minh</div>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Hãng bay: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <select name="" class="text-primary" id="info-box-select">
+                                    <option value="1">Vietnam Airlines</option>
+                                    <option value="1">Vietnam Airlines</option>
+                                    <option value="1">Vietnam Airlines</option>
+                                    <option value="1">Vietnam Airlines</option>
+                                </select>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Ngày giờ hạ cánh: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Ví dụ: VN109</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="info-box">
+                                <label class="info-label text-info">Giá nhập người lớn <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Ví dụ: 2000000</p>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Giá niêm yết: </label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Ví dụ: 2000000</p>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Giá bán người lớn:<span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Ví dụ: 2000000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="info-box">
+                                <label class="info-label text-info">Giá nhập trẻ em: (*) <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Ví dụ: 2000000</p>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Giá niêm yết: </label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Ví dụ: 2000000</p>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Giá bán trẻ em:<span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Ví dụ: 2000000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+
+                            <div class="info-box">
+                                <label class="info-label text-info">Chính sách thuế: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <select name="" class="text-primary" id="info-box-select">
+                                    <option value="1">Tính thuế theo %</option>
+                                    <option value="1">Vietnam Airlines</option>
+                                    <option value="1">Vietnam Airlines</option>
+                                    <option value="1">Vietnam Airlines</option>
+                                </select>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Áp dụng chính sách thuế: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content-time  text-muted">
+                                    <p>Ví dụ: VN109</p>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <label class="info-label text-info">Số lượng vé phát hành: <span
+                                        class="required text-danger">(∗)</span></label>
+                                <div class="info-content  text-primary">25 người lớn, 5 trẻ em</div>
+                            </div>
+                        </div>
+                        <span class="end-add">+ Thêm chặng về</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+<script src="./assets/js/filghtAddNew.js">
+
+</script>
+
+</html>

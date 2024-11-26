@@ -10,15 +10,28 @@ document.addEventListener('DOMContentLoaded', function () {
   $('.btn-new-application').click(function (e) {
     $('#cheap-price').slideUp("fast");
     $('#new-application').slideDown("slow");
+    $('#cheap-price_1').slideUp("fast");
     $('.btn-new-application').addClass('active');
     $('.btn-cheap-price').removeClass('active');
+    $('.btn-cheap-price_1').removeClass('active');
   });
   $('.btn-cheap-price').click(function (e) {
     e.preventDefault();
     $('#new-application').slideUp("fast");
+    $('#cheap-price_1').slideUp("fast");
     $('#cheap-price').slideDown("slow");
     $('.btn-cheap-price').addClass('active');
     $('.btn-new-application').removeClass('active');
+    $('.btn-cheap-price_1').removeClass('active');
+  });
+  $('.btn-cheap-price_1').click(function (e) {
+    e.preventDefault();
+    $('#cheap-price').slideUp("fast");
+    $('#cheap-price_1').slideDown("slow");
+    $('#new-application').slideUp("fast");
+    $('.btn-cheap-price').removeClass('active');
+    $('.btn-new-application').removeClass('active');
+    $('.btn-cheap-price_1').addClass('active');
   });
 });
 

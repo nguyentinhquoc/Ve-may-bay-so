@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+.padding-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 25px;
+  background-color: #f0fafa;
+  border: 2px solid var(--color-primary);
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-info);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-switch.active {
+  background-color: #23c6c8;
+}
+
+.toggle-switch.active .toggle-circle {
+  left: 25px;
+  background-color: #fff;
+}
+
+/* +++++++++++++++++++++++ */
+
+.select-container {
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select-container label {
+  font-size: 14px;
+  color: #23c6c8;
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+#destination-select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+.add-option {
+  color: #23c6c8;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.add-option:hover {
+  text-decoration: underline;
+}
+
+/* ==================================================== */
+
+.info-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  width: 256px;
+  padding: 15px;
+}
+
+.info-label {
+  position: absolute;
+  top: -12px;
+  left: 13px;
+  width: max-content;
+  background-color: #fff;
+  font-size: 14px;
+  display: block;
+  font-weight: 700;
+  padding: 0 3px;
+}
+
+.info-content {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.info-content-time {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 0;
+}
+
+#info-box-select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ======================== */
+.menu-flight {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.flight-right {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.flight-left {
+  width: 28%;
+}
+.flight-right {
+  width: 70%;
+}
