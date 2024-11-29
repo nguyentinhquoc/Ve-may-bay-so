@@ -37,3 +37,16 @@ document.querySelectorAll(".toggle-menu").forEach((toggleButton) => {
     }
   });
 });
+
+$(document).ready(function () {
+  $(".toggle-button").click(function () {
+    $(".details").slideToggle(300);
+
+    const isDetail = $(this).html().includes('Chi tiết');
+
+    $(this).html(isDetail 
+      ? `Rút gọn <img src="./assets/svg/icons/Flight-list/down.svg" alt="">`
+      : `Chi tiết <img src="./assets/svg/icons/Flight-list/right.svg" alt="">`);
+  });
+});
+
