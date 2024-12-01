@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+}
+
+.padding-15 {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/*  */
+.mt-20 {
+  margin-top: 25px;
+}
+.menu-flight {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.box-shadow {
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.flight-right {
+  border-radius: 10px;
+}
+
+.flight-left {
+  width: 24%;
+}
+.flight-right {
+  width: 74%;
+}
+/* Nút cuộn lên */
+.scroll-to-top {
+  position: fixed;
+  bottom: 27rem;
+  right: 20px;
+  display: none; /* Ẩn nút khi trang mới tải */
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3;
+}
+
+.scroll-to-top.show {
+  display: block; /* Hiển thị nút */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-to-top.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ============================================================== */
+
+.menu-section > div img {
+  cursor: pointer;
+}
+.menu-section {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+.list-none-style {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.list-none-style > li {
+  height: 50px;
+  cursor: pointer;
+}
+
+.list-none-style > li > p:first-child {
+  flex: 3;
+}
+
+.list-none-style > li > div {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+  gap: 20px;
+}
+.list-none-style > li > div > span > img {
+  width: 10px;
+  object-fit: contain;
+}
+
+.chuyendi {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background-color: rgba(255, 246, 244, 1);
+  margin-bottom: 15px;
+}
+
+.list-none-style.hidden {
+  max-height: 0;
+  opacity: 0;
+  display: none;
+}
+
+/*  */
+.tongtienFaleis {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.tongtienFaleis > h6 {
+  flex: 1;
+}
+
+.tongtienFaleis > h6:last-child {
+  text-align: end;
+}
+
+.chitietdatvess {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 24px 0 24px 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.px-30 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.lichdiss {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(210, 210, 214, 1);
+  color: var(--color-primary);
+  font-weight: 600;
+  background-color: rgba(255, 246, 244, 1);
+}
+.lichdiss > div:first-child {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.lichdiss > div:last-child {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.lichdiss__conten {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.lichdiss__conten--left > div:first-child > div:last-child {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 15px;
+}
+.content-main--left > div:first-child > div:first-child {
+  width: 60px;
+  font-size: 10px;
+  text-align: end;
+
+  margin-right: 15px;
+  line-height: 14px;
+  color: var(--color-info);
+}
+.content-main--left > div:first-child {
+  align-items: center;
+}
+.content-main--left > div:last-child {
+  font-weight: 600;
+  font-size: 14px;
+}
+/*  */
+
+.content-main--right > div:first-child > div:last-child {
+  width: 60px;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--color-info);
+  margin-left: 16px;
+}
+.content-main--right > div:first-child {
+  align-items: center;
+}
+.content-main--right > div:last-child {
+  font-weight: 600;
+  font-size: 14px;
+}
+.filget-conten-main {
+  margin: 0 20px;
+
+  position: relative;
+  top: 20px;
+}
+.lichdiss__conten > div {
+  flex: 1;
+}
+.lichdiss__conten > div:nth-child(2) {
+  flex: 2;
+}
+
+.content-main-end {
+  font-weight: 600;
+  gap: 40px;
+}
+.content-main-end > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/*  */
+.lichdiss-2 {
+  background-color: rgba(247, 255, 255, 1);
+}
+
+/*  */
+.magiamgia {
+  padding: 0 3px;
+  margin-top: 40px;
+  position: relative;
+}
+.magiamgia > label {
+  position: absolute;
+  top: -10px;
+  font-size: 12px;
+  color: var(--color-info);
+  font-weight: 600;
+  background-color: #fff;
+  left: 25px;
+  padding: 1px 4px;
+}
+.magiamgia > input {
+  width: 100%;
+  padding: 18px 25px;
+  outline: none;
+  border: 1px solid var(--color-info);
+  border-radius: 10px;
+}
+.magiamgia > input::placeholder {
+  color: var(--color-muted);
+}
+.dieukienthoathuan {
+  margin: 30px 0;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  background-color: rgba(255, 246, 244, 1);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  gap: 15px;
+  align-items: start;
+}
+
+.dieukienthoathuan > input {
+  margin-top: 3px;
+}
+
+/*  */
+.thongtinhanglykygui {
+  padding-top: 20px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.hanhkhach {
+  font-size: 14px;
+  flex: 1;
+}
+.thongtinhanhkhach {
+  font-size: 12px;
+  flex: 2;
+  padding: 15px 20px;
+  border: 1px solid var(--color-primary);
+  border-radius: 10px;
+}
+
+.infor-thongtinhanhly {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.hanhkhach {
+  text-align: end;
+}
+.thongtinhanhkhach {
+  text-align: start;
+}
+.infor-hanhlykyguiHeader {
+  gap: 330px;
+  margin-left: 190px;
+}
+.mt-10 {
+  margin-top: 12px;
+}
+input[type="date"]::-webkit-datetime-edit {
+  color: #ccc; /* Màu mờ */
+}
+
+input[type="date"]:focus::-webkit-datetime-edit {
+  color: #000; /* Màu đậm khi focus */
+}
+
+/* Dùng ::before để thêm nội dung tùy chỉnh */
+input[type="date"]::before {
+  content: attr(placeholder);
+  position: absolute;
+  color: #aaa;
+}
+
+/* Loại bỏ nội dung ::before khi người dùng chọn ngày */
+input[type="date"]:focus::before,
+input[type="date"]:not(:placeholder-shown)::before {
+  content: "";
+}
+
+/* Style tổng quát */
+input[type="date"] {
+  position: relative;
+  font-size: 12px;
+  color: #000;
+}
+
+/*  */
+.input-infor-thongtin,
+.input-select-sex {
+  position: relative;
+}
+.text-info-tt,
+.text-info-sex {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  z-index: 10;
+  background-color: #fff;
+  padding: 0px 4px;
+  color: var(--color-info);
+}
+.input-thongtin {
+  padding: 20px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--color-muted);
+  width: 100%;
+  outline: none;
+}
+.input-thongtin::placeholder {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+.luachongioitinh {
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--color-muted);
+}
+.luachongioitinh > select {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 16px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.thongtinnguoikhachhang > h6 {
+  flex: 1;
+}
+.thongtinnguoikhachhang > div:nth-child(2),
+.thongtinnguoikhachhang > div:nth-child(4) {
+  flex: 2;
+}
+.thongtinnguoikhachhang > div:nth-child(3) {
+  flex: 3;
+}
+.thongtinnguoikhachhang {
+  margin-top: 20px;
+  gap: 20px;
+  align-items: center;
+}
+/*  */
+.infor-thongtinkh {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(247, 255, 255, 1);
+}
+.infor-thongtinkh > div {
+  font-size: 12px;
+  font-weight: 600;
+}
+/*  */
+.flex-1 {
+  flex: 1 !important;
+}
+.flex-2 {
+  flex: 2 !important;
+}
+/*  */
+
+.infor-textarea {
+  position: relative;
+  flex: 4 !important;
+  min-width: 765px;
+}
+.infor-textarea > label {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #fff;
+  padding: 1px 3px;
+}
+.infor-textarea > textarea {
+  resize: none;
+  min-height: 200px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+.yeucaukhac {
+  align-items: start !important;
+}
+.infor-textarea > textarea::placeholder {
+  font-size: 12px;
+  color: var(--color-muted);
+}

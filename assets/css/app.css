@@ -4,19 +4,19 @@
   src: url('../fonts/manrope-bold.otf');
 } */
 @font-face {
-  font-family: 'Manrope-blod';
-  src: url('../fonts/manrope-extrabold.otf');
+  font-family: "Manrope-blod";
+  src: url("../fonts/manrope-extrabold.otf");
 }
 
 @font-face {
-  font-family: 'Manrope-medium';
-  src: url('../fonts/manrope-medium.otf');
+  font-family: "Manrope-medium";
+  src: url("../fonts/manrope-medium.otf");
 }
 
 * {
   margin: 0px;
   padding: 0px;
-  font-family: 'Manrope-medium', sans-serif;
+  font-family: "Manrope-medium", sans-serif;
 }
 
 body {
@@ -25,17 +25,17 @@ body {
 }
 
 :root {
-  --color-primary: #0A7C79;
-  --color-info: #0EBAB5;
-  --color-danger: #FF3C13;
-  --color-light: #F7FFFF;
-  --color-info-alt: #0EBAB5;
-  --color-muted: #D2D2D6;
+  --color-primary: #0a7c79;
+  --color-info: #0ebab5;
+  --color-danger: #ff3c13;
+  --color-light: #f7ffff;
+  --color-info-alt: #0ebab5;
+  --color-muted: #d2d2d6;
 }
 
 /* color */
 .bg-primary {
-  background-color: var(--color-primary)
+  background-color: var(--color-primary);
 }
 
 .bg-info {
@@ -59,7 +59,7 @@ body {
 }
 
 .text-primary {
-  color: var(--color-primary)
+  color: var(--color-primary);
 }
 
 .text-info {
@@ -88,8 +88,6 @@ body {
   font-size: 78px;
   line-height: 92px;
 }
-
-
 
 h1 {
   font-size: 58px;
@@ -204,7 +202,6 @@ section {
   justify-content: space-between;
 }
 
-
 .header__logo {
   height: 36px;
   margin-left: 80px;
@@ -242,7 +239,11 @@ section {
   left: -10px;
   height: 50px;
   width: 20px;
-  background: radial-gradient(circle, transparent 50%, var(--color-danger, #FF3C13) 50%) -10px 0 / 20px 10px repeat-y;
+  background: radial-gradient(
+      circle,
+      transparent 50%,
+      var(--color-danger, #ff3c13) 50%
+    ) -10px 0 / 20px 10px repeat-y;
 }
 
 .header__username {
@@ -270,7 +271,7 @@ section {
   padding: 0;
 }
 
-.menu>ul {
+.menu > ul {
   margin-left: 80px;
   display: flex;
 }
@@ -292,7 +293,7 @@ section {
   top: 0;
 }
 
-.menu ul li:hover>ul {
+.menu ul li:hover > ul {
   display: block;
 }
 
@@ -319,16 +320,16 @@ section {
   align-items: center;
 }
 
-.nav__right--icon>div {
+.nav__right--icon > div {
   margin: 0 10px;
 }
 
-.nav--numberPhone>span {
+.nav--numberPhone > span {
   margin-right: 45px;
   margin-left: 5px;
 }
 
-.nav--numberPhone>div {
+.nav--numberPhone > div {
   margin-left: 15px;
 }
 
@@ -442,7 +443,11 @@ section {
   color: var(--color-light);
   border: none;
   cursor: pointer;
-  background: linear-gradient(112.85deg, var(--color-info) 34.44%, var(--color-danger) 95.15%);
+  background: linear-gradient(
+    112.85deg,
+    var(--color-info) 34.44%,
+    var(--color-danger) 95.15%
+  );
   border-radius: 0px 10px 10px 0px;
 }
 
@@ -462,7 +467,6 @@ section {
 
 .footer__copyright-legal,
 .footer__copyright-links {
-
   display: flex;
   gap: 15px;
 }
@@ -482,7 +486,7 @@ section {
 }
 
 .journey-box--submit {
-  background: #FF3C13;
+  background: #ff3c13;
   border-radius: 10px;
   padding: 0px 20px;
   color: var(--color-light);
@@ -517,7 +521,6 @@ section {
 .form__flight-types {
   display: flex;
 
-
   background-color: var(--color-light);
   width: fit-content;
   border-radius: 7px;
@@ -536,7 +539,7 @@ section {
   color: var(--color-info);
 }
 
-.form__flight-types input:checked+.form__label {
+.form__flight-types input:checked + .form__label {
   background-color: var(--color-info);
   color: var(--color-light);
   border-radius: 7px;
@@ -574,7 +577,6 @@ section {
   vertical-align: middle;
   margin-right: 5px;
 }
-
 
 .journey-box--customer {
   white-space: nowrap;
@@ -616,4 +618,44 @@ section {
 
 .cursor {
   cursor: pointer;
+}
+
+.header__menu--chung {
+  height: 200px;
+}
+
+.form__chung {
+  display: flex;
+  position: static !important;
+
+  transform: translate(0, 0) !important;
+  margin: 15px auto;
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  gap: 10px;
+}
+.btn-checkbox {
+  appearance: none;
+  border: 2px solid var(--color-danger);
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+}
+.btn-checkbox:checked {
+  background-color: var(--color-danger);
+
+  position: relative;
+}
+.btn-checkbox:checked::after {
+  content: "";
+  width: 8px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  transform: rotate(45deg);
 }

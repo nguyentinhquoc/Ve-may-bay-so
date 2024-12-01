@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/flight.css" />
     <link rel="stylesheet" href="./assets/css/filghtAddNew.css">
-    <title>FlightLists</title>
+
+    <!-- Thêm jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>filghtAddNew</title>
 </head>
 
 <body>
-    <!-- <header class="header bg-info">
+
+    <header class=" header bg-info">
         <div class="header__logo">
             <img src="assets/svg/logoLight.svg" alt="" />
         </div>
@@ -72,7 +77,77 @@
                 <span>09.1900.5320</span>
             </div>
         </div>
-    </nav> -->
+    </nav>
+    <div class="header__menu--chung">
+        <div class="banner">
+            <form class=" form form__chung ">
+                <div class="form__left">
+                    <div class="form__flight-types">
+                        <div class="form__flight-type">
+                            <input type="radio" id="one-way" name="flight-type" class="form__checkbox" />
+                            <label for="one-way" class="form__label b uppercase-text">Một chiều</label>
+                        </div>
+                        <div class="form__flight-type">
+                            <input type="radio" id="round-trip" name="flight-type" class="form__checkbox" />
+                            <label for="round-trip" class="form__label  b uppercase-text">Khứ hồi</label>
+                        </div>
+                        <div class="form__flight-type">
+                            <input type="radio" id="multi-city" name="flight-type" class="form__checkbox" />
+                            <label for="multi-city" class="form__label  b uppercase-text">Nhiều chặng</label>
+                        </div>
+                    </div>
+                    <div class="journey-form journey-form-location btm ">
+                        <div class="journey-box journey-box--departure  b uppercase-text">
+                            <label for="departure"><img src="assets/svg/icons/plane_search.svg" alt="">Điểm đi: </label>
+                            <p class="location-span">Ha Noi</p>
+                        </div>
+                        <div class="icon-togle">
+                            <img src="assets/svg/icons/round-trip.svg" alt="">
+                        </div>
+                        <div class="journey-box journey-box--destination  b uppercase-text">
+                            <label for="destination"><img src="assets/svg/icons/map_search.svg" alt="">Điểm đến:</label>
+                            <p class="location-span">Ho Chi Minh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__right">
+                    <div class="form__flight-info ">
+                        <select name="class" id="flight-class">
+                            <option value="economy">Hạng: Phổ thông</option>
+                            <option value="business">Hạng: Thương gia</option>
+                            <option value="first">Hạng: Hạng nhất</option>
+                        </select>
+                        <select name="promo" id="promo-code">
+                            <option value="">Mã khuyến mãi</option>
+                            <option value="PROMO1">PROMO1</option>
+                            <option value="PROMO2">PROMO2</option>
+                            <option value="PROMO3">PROMO3</option>
+                        </select>
+                    </div>
+                    <div class="journey-form btm">
+                        <div class="journey-box journey-box--date journey-date--departure b ">
+                            <label for="departure-date"> <img src="assets/svg/icons/date_search.svg" alt="">Ngày
+                                đi</label><br>
+                            <input type="date" id="departure-date">
+                        </div>
+                        <div class="journey-box journey-box--date journey-date--return b">
+                            <label for="return-date"> <img src="assets/svg/icons/date_search.svg" alt="">Ngày
+                                đi</label><br>
+                            <input type="date" id="return-date">
+                        </div>
+                        <div class="journey-box journey-box--customer">
+                            <label for="date"><img src="assets/svg/icons/user_search.svg" alt=""> Hành Khách </label>
+                            <br>
+                            <u> <span class="b">1</span> Người lớn, <span class="b">1</span> trẻ em, <span
+                                    class="b">1</span> em
+                                bé</u>
+                        </div>
+                        <button class=" journey-box--submit b">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <main>
         <section>
             <div class="flight   d-flex justify-content-between">
@@ -82,14 +157,16 @@
                             <h6 class="text-primary">MENU</h6>
                             <span><img src="./assets/svg/icons/FilightLists/menu-seting.svg" alt=""></span>
                         </div>
+
+                        <!-- Phần menu vé siêu tiết kiệm -->
                         <div class="menu-section">
-                            <div class="text-info d-flex justify-content-between">
+                            <div class=" toggle-menu text-info d-flex justify-content-between" data-target="#menu-stk">
+                                <h6 class="text-info">Vé siêu tiết kiệm</h6>
                                 <div>
-                                    Vé siêu tiết kiệm
+                                    <img src="./assets/svg/icons/FilightLists/drop-button.svg" alt="">
                                 </div>
-                                <div><img src="./assets/svg/icons/FilightLists/drop-button.svg" alt=""></div>
                             </div>
-                            <ul class="list-none-style">
+                            <ul class="list-none-style hidden" id="menu-stk">
                                 <li>
                                     <input class="btn-checkbox" type="checkbox" id="stk-1">
                                     <label class="text-primary" for="stk-1">Quản lý vé siêu tiết kiệm</label>
@@ -108,13 +185,17 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="menu-section">
-                            <div class="text-info d-flex justify-content-between">
-                                <div>Vé Sự kiện và Du lịch</div>
-                                <div><img src="./assets/svg/icons/FilightLists/drop-button.svg" alt=""></div>
 
+                        <!-- Phần menu vé sự kiện và du lịch -->
+                        <div class="menu-section">
+                            <div data-target="#menu-skdl"
+                                class="  toggle-menu text-info d-flex justify-content-between">
+                                <h6 class="text-info">Vé Sự kiện và Du lịch</h6>
+                                <div>
+                                    <img src="./assets/svg/icons/FilightLists/drop-button.svg" alt="">
+                                </div>
                             </div>
-                            <ul class="list-none-style">
+                            <ul class="list-none-style hidden" id="menu-skdl">
                                 <li>
                                     <input class="btn-checkbox" type="checkbox" id="skdl-1">
                                     <label class="text-primary" for="skdl-1">Quản lý nhà cung cấp</label>
@@ -130,178 +211,585 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
 
-                <div class="flight-right">
-                    <div class="right-section padding-15 ">
-                        <div class="border-button d-flex justify-content-between">
-                            <div>
-                                <div class="text-info">
-                                    Tạo mới vé siêu tiết kiệm
-                                </div>
-                                <p class="text-info">Áp dụng biểu giá riêng đã bao gồm thuế phí </p>
-                            </div>
-                            <div class="text-danger">
-                                (*) Thông tin bắt buộc
-                            </div>
 
+                <div class="flight-right ">
+                    <form action="">
+                        <!--  -->
+                        <div class="plan-right-heading padding-15 ">
+                            <div>
+                                <div class="text-primary">Tạo mới Vé siêu tiết kiệm</div>
+
+                            </div>
+                            <div class=" d-flex justify-content-between">
+                                <p class="text-info">Áp dụng biểu giá riêng đã bao gồm thuế phí</p>
+                                <p class="text-danger">(*) Thông tin bắt buộc</p>
+                            </div>
                         </div>
-                        <div class="border-button">
-                            <div class="d-flex justify-content-between">
+                        <!--  -->
+                        <div class="border-button padding-15   mt-20 ">
+                            <div class="d-flex justify-content-between mt-20">
                                 <h6 class="text-primary">GIỚI THIỆU ĐIỂM ĐẾN:</h6>
                                 <span>
                                     <div class="toggle-switch" onclick="toggleSwitch(this)">
                                         <div class="toggle-circle"></div>
                                     </div>
-
                                 </span>
                             </div>
-                            <div class="select-container">
-                                <label for="destination-select">Chọn điểm đến có sẵn:</label>
-                                <div class="select-wrapper">
-                                    <select class="text-primary" id="destination-select">
-                                        <option value="1">Giới thiệu về Điện Biên</option>
-                                        <option value="2">Điện Biên Phủ</option>
-                                        <option value="3">Lịch sử Điện Biên</option>
-                                        <option value="4">Du lịch Điện Biên</option>
-                                    </select>
+                            <div class="select-container mt-20">
+                                <label for="destination-select" class="chondaidiem">Chọn điểm đến có sẵn:</label>
+                                <div class="d-flex gioithieu justify-content-between">
+                                    <div class="select-wrapper padding-15">
+                                        <select class="text-primary" id="destination-select">
+                                            <option value="1">Giới thiệu về Điện Biên</option>
+                                            <option value="2">Điện Biên Phủ</option>
+                                            <option value="3">Lịch sử Điện Biên</option>
+                                            <option value="4">Du lịch Điện Biên</option>
+                                        </select>
+                                    </div>
                                     <div class="add-option">
                                         <span>+ Thêm</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div>
-                                <span class="text-info">Giớ thiệu về Điện Biên x </span>
-                            </div>
-                            <span class="end-add">+ Tạo mới điểm đến</span>
-                        </div>
-                    </div>
-                    <!-- Chặng đi -->
-                    <div class="padding-15 ">
-                        <h6 class="text-primary">CHẶNG ĐI:</h6>
-                        <div class="d-flex justify-content-between">
-                            <div class="info-box">
-                                <label class="info-label text-info">Điểm khởi hành: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content  text-primary">Hà Nội</div>
-                            </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Ngày giờ khởi hành: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Thứ 4, 15:50:00 -23/09/2024 </p>
+                            <div class="mt-10">
+                                <div class="giothieudiadiem">
+                                    <span class="text-info padding-15">Giớ thiệu về Điện Biên x </span>
                                 </div>
                             </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Ngày giờ hạ cánh: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Thứ 4, 15:50:00 -23/09/2024 </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="info-box">
-                                <label class="info-label text-info">Điểm đến: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content  text-primary">TP. Hồ Chí Minh</div>
-                            </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Hãng bay: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <select name="" class="text-primary" id="info-box-select">
-                                    <option value="1">Vietnam Airlines</option>
-                                    <option value="1">Vietnam Airlines</option>
-                                    <option value="1">Vietnam Airlines</option>
-                                    <option value="1">Vietnam Airlines</option>
-                                </select>
-                            </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Ngày giờ hạ cánh: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Ví dụ: VN109</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="info-box">
-                                <label class="info-label text-info">Giá nhập người lớn <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Ví dụ: 2000000</p>
-                                </div>
-                            </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Giá niêm yết: </label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Ví dụ: 2000000</p>
-                                </div>
-                            </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Giá bán người lớn:<span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Ví dụ: 2000000</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="info-box">
-                                <label class="info-label text-info">Giá nhập trẻ em: (*) <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Ví dụ: 2000000</p>
-                                </div>
-                            </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Giá niêm yết: </label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Ví dụ: 2000000</p>
-                                </div>
-                            </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Giá bán trẻ em:<span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Ví dụ: 2000000</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
+                            <span class="end-add padding-15">+ Tạo mới điểm đến</span>
 
-                            <div class="info-box">
-                                <label class="info-label text-info">Chính sách thuế: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <select name="" class="text-primary" id="info-box-select">
-                                    <option value="1">Tính thuế theo %</option>
-                                    <option value="1">Vietnam Airlines</option>
-                                    <option value="1">Vietnam Airlines</option>
-                                    <option value="1">Vietnam Airlines</option>
-                                </select>
-                            </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Áp dụng chính sách thuế: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content-time  text-muted">
-                                    <p>Ví dụ: VN109</p>
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <!-- FORM  -->
+                        <!-- <div>
+                            <form action="">
+                                <div class="border-button padding-15   mt-20 ">
+                                    <div class="d-flex justify-content-between mt-20">
+                                        <h6 class="text-primary">TẠO MỚI ĐIỂM ĐẾN:</h6>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mt-20 khongcanh mt-50">
+                                        <div class="info-box ">
+                                            <label class="info-label text-info">Tiêu đề điểm đến mới: <span
+                                                    class="required text-danger"></span></label>
+                                            <div class="info-content-time  text-muted">
+                                                <input type="text" name="" id="" class="info-content"
+                                                    placeholder="Ví dụ: Hà Nội">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="select-container mt-20">
+                                        <label for="file-upload" class="chondaidiem">Album Ảnh:</label>
+                                        <div class="d-flex gioithieu justify-content-between">
+                                           
+                                            <div class="select-wrapper chose-file padding-15">
+                                                <span for="file-upload" class="custom-file-label">Chọn ảnh...</span>
+                                                <input type="file" name="" class="info-content" id="file-upload">
+                                            </div>
+                                        
+                                            <div class="add-option-check">
+                                                <ul>
+                                                    <li>
+                                                        <input class="btn-checkbox" type="checkbox">
+                                                        <span class="text-primary">Ảnh đại diện</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="add-option">
+                                                <span>+ Thêm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="mt-10">
+                                        <div class="giothieudiadiem">
+                                            <span class="text-info padding-15">Giớ thiệu về Điện Biên x </span>
+                                            <span class="text-info padding-15">Giớ thiệu về Điện Biên x </span>
+                                            <span class="text-info padding-15">Giớ thiệu về Điện Biên x </span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="textarea-container mt-20">
+                                            <label for="textarea" class="label-text text-info">Nội dung giới thiệu
+                                                điểm
+                                                đến:</label>
+                                            <textarea id="textarea" class="custom-textarea"
+                                                placeholder="Giới thiệu một vài địa danh nổi tiếng, văn hóa, ẩm thực và các thông tin đặc sắc"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex justify-content-between khongcanh mt-20">
+
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Chọn Rating: <span
+                                                    class="required text-danger"></span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">5 sao</option>
+                                                <option value="1">4 sao</option>
+                                                <option value="1">3 sao</option>
+                                                <option value="1">2 sao</option>
+                                            </select>
+                                        </div>
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Thiết lập số người xem: <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <div class="info-content-time  text-muted">
+
+                                                <input type="text" name="" id="" class="info-content"
+                                                    placeholder="Ví dụ: 10000">
+                                            </div>
+                                        </div>
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Chọn khu vực: <span
+                                                    class="required text-danger"></span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">Asia</option>
+                                                <option value="1">Asia</option>
+                                                <option value="1">Asia</option>
+                                                <option value="1">Asia</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="padding-15 endseting d-flex justify-content-between">
+                                    <ul class="padding-15">
+
+                                    </ul>
+                                    <div class=" d-flex justify-content-end endPlane">
+                                        <span class="cancel">CANCEL</span>
+                                        <button type="submit" class="setting">CẤU HÌNH</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div> -->
+                        <!--FORM  -->
+                        <div class="padding-15 mt-20 changdi border-button">
+                            <h6 class="text-primary">CHẶNG ĐI:</h6>
+                            <div class="d-flex justify-content-between mt-20 khongcanh">
+                                <div class="info-box">
+                                    <label class="info-label text-info">Điểm khởi hành: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <input class="info-content  text-primary" type="text" value="Hà Nội"></input>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Ngày giờ khởi hành: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <div class="info-content-time  text-muted">
+
+                                        <input type="datetime-local" class="info-content ">
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Ngày giờ hạ cánh: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <div class="info-content-time  text-muted">
+                                        <input type="datetime-local" class="info-content ">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="info-box">
-                                <label class="info-label text-info">Số lượng vé phát hành: <span
-                                        class="required text-danger">(∗)</span></label>
-                                <div class="info-content  text-primary">25 người lớn, 5 trẻ em</div>
+                            <div class="d-flex justify-content-between  khongcanh">
+                                <div class="info-box">
+                                    <label class="info-label text-info">Điểm đến: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <input class="info-content  text-primary" type="text"
+                                        value="TP. Hồ Chí Minh"></input>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Hãng bay: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <select name="" class="text-primary" id="info-box-select">
+                                        <option value="1">Vietnam Airlines</option>
+                                        <option value="1">Vietnam Airlines</option>
+                                        <option value="1">Vietnam Airlines</option>
+                                        <option value="1">Vietnam Airlines</option>
+                                    </select>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Ngày giờ hạ cánh: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <div class="info-content-time  text-muted">
+
+                                        <input type="text" name="" id="" class="info-content"
+                                            placeholder="Ví dụ: VN109">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between  khongcanh">
+                                <div class="info-box">
+                                    <label class="info-label text-info">Giá nhập người lớn <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <div class="info-content-time  text-muted">
+                                        <p></p>
+
+                                        <input type="text" name="" id="" class="info-content"
+                                            placeholder="Ví dụ: 2000000">
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Giá niêm yết: </label>
+                                    <div class="info-content-time  text-muted">
+
+                                        <input type="text" name="" id="" class="info-content"
+                                            placeholder="Ví dụ: 2000000">
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Giá bán người lớn:<span
+                                            class="required text-danger">(∗)</span></label>
+                                    <div class="info-content-time  text-muted">
+
+                                        <input type="text" name="" id="" class="info-content"
+                                            placeholder="Ví dụ: 2000000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between khongcanh">
+                                <div class="info-box">
+                                    <label class="info-label text-info">Giá nhập trẻ em: (*) <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <div class="info-content-time  text-muted">
+                                        <input type="text" name="" id="" class="info-content"
+                                            placeholder="Ví dụ: 2000000">
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Giá niêm yết: </label>
+                                    <div class="info-content-time  text-muted">
+                                        <input type="text" name="" id="" class="info-content"
+                                            placeholder="Ví dụ: 2000000">
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Giá bán trẻ em:<span
+                                            class="required text-danger">(∗)</span></label>
+                                    <div class="info-content-time  text-muted">
+                                        <input type="text" name="" id="" class="info-content"
+                                            placeholder="Ví dụ: 2000000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between khongcanh">
+
+                                <div class="info-box">
+                                    <label class="info-label text-info">Chính sách thuế: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <select name="" class="text-primary" id="info-box-select">
+                                        <option value="1">Tính thuế theo %</option>
+                                        <option value="1">Vietnam Airlines</option>
+                                        <option value="1">Vietnam Airlines</option>
+                                        <option value="1">Vietnam Airlines</option>
+                                    </select>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Áp dụng chính sách thuế: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <div class="info-content-time  text-muted">
+
+                                        <input type="text" name="" id="" class="info-content"
+                                            placeholder="Ví dụ: VN109">
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <label class="info-label text-info">Số lượng vé phát hành: <span
+                                            class="required text-danger">(∗)</span></label>
+                                    <input class="info-content  text-primary" type="text"
+                                        value="25 người lớn, 5 trẻ em"></input>
+                                </div>
+                            </div>
+                            <span class="end-add padding-15">+ Thêm chặng về</span>
+                        </div>
+                        <!--  -->
+                        <div class="padding-15 mt-20 hanhly border-button">
+                            <h6 class="text-primary">THÔNG TIN HÀNH LÝ:</h6>
+                            <p class="text-info">Bổ sung hành lý cho từng chặng bay</p>
+
+                            <div class="bosunghanhly d-flex justify-content-between ">
+                                <div>
+                                    <span class="end-add padding-15 ">Hành lý chiều đi:</span>
+                                    <div class="d-flex justify-content-between mt-20 khongcanh">
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Hãng bay: <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">Vietnam Airlines</option>
+                                                <option value="1">Vietnam Airlines</option>
+                                                <option value="1">Vietnam Airlines</option>
+                                                <option value="1">Vietnam Airlines</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between  khongcanh">
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Hành lý xách tay: <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">12Kg</option>
+                                                <option value="1">13Kg</option>
+                                                <option value="1">12Kg</option>
+                                                <option value="1">12Kg</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between  khongcanh">
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Hành lý ký gửi <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">23Kg</option>
+                                                <option value="1">23Kg</option>
+                                                <option value="1">23Kg</option>
+                                                <option value="1">23Kg</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="end-add padding-15">Hành lý chiều về:</span>
+                                    <div class="d-flex justify-content-between mt-20  khongcanh">
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Hãng bay: <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">Vietnam Airlines</option>
+                                                <option value="1">Vietnam Airlines</option>
+                                                <option value="1">Vietnam Airlines</option>
+                                                <option value="1">Vietnam Airlines</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between  khongcanh">
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Hành lý xách tay: <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">12Kg</option>
+                                                <option value="1">13Kg</option>
+                                                <option value="1">12Kg</option>
+                                                <option value="1">12Kg</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between  khongcanh">
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Hành lý ký gửi <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">23Kg</option>
+                                                <option value="1">23Kg</option>
+                                                <option value="1">23Kg</option>
+                                                <option value="1">23Kg</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--  -->
+                        <div class="padding-15 mt-20 hanhly border-button-it">
+                            <h6 class="text-primary">ĐIỀU KIỆN VÉ:</h6>
+                            <p class="text-info">Diều kiện sử dụng cho vé máy bay</p>
+                            <input type="text" name="" id="dieukienveinput"
+                                placeholder="thông tin, hoàn hủy, thay dổi...">
+
+                            <h6 class="text-primary">NHÀ CUNG CẤP</h6>
+                            <div class="bosunghanhly d-flex justify-content-between ">
+                                <div>
+                                    <div class="d-flex justify-content-between mt-20  khongcanh">
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Hành lý ký gửi <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <select name="" class="text-primary" id="info-box-select">
+                                                <option value="1">eMAL</option>
+                                                <option value="1">eMAL</option>
+                                                <option value="1">eMAL</option>
+                                                <option value="1">eMAL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mt-20  khongcanh">
+                                        <div class="info-box">
+                                            <label class="info-label text-info">Hành lý ký gửi <span
+                                                    class="required text-danger">(∗)</span></label>
+                                            <input class="info-content  text-primary" type="text"
+                                                value="sỐ ĐIỆN THOẠI"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--  -->
+                        <div class="padding-15 mt-20 hanhly border-button-it">
+                            <h6 class="text-primary">CẤU HÌNH HIỂN THỊ</h6>
+                            <p class="text-info">Cho phép hiển htij ở các vị trí trên kênh bán</p>
+                            <input type="text" name="" id="dieukienveinput"
+                                placeholder="thông tin, hoàn hủy, thay dổi...">
+
+                            <h6 class="text-primary">NHÀ CUNG CẤP</h6>
+                            <div class="bosunghanhly d-flex justify-content-between mt-20 ">
+                                <div class="info-box wcauhinh">
+                                    <label class="info-label text-info">Cấu hình thứ tụ hiển thị <span
+                                            class="required text-danger"></span></label>
+                                    <div class="info-content-time  text-muted">
+                                        <input type="text" name="" id="" class="info-content" placeholder="01">
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="d-flex cauhinhhienthino ">
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="stk-1">
+                                    <label class="text-primary" for="stk-1">Hot Site</label>
+                                </li>
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="stk-1">
+                                    <label class="text-primary" for="stk-1">Hot Category</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--  -->
+                        <div class="padding-15 endseting d-flex justify-content-between">
+                            <ul class="padding-15">
+                                <li>
+                                    <input class="btn-checkbox" type="checkbox" id="stk-1">
+                                    <label class="text-primary" for="stk-1">Enabled</label>
+                                </li>
+                            </ul>
+                            <div class=" d-flex justify-content-end endPlane">
+                                <span class="cancel">CANCEL</span>
+                                <button type="submit" class="setting">CẤU HÌNH</button>
                             </div>
                         </div>
-                        <span class="end-add">+ Thêm chặng về</span>
+                    </form>
+                </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__widgets">
+            <div class="footer__brand">
+                <div class="footer__logo">
+                    <img src="assets/svg/icons/foooter/tickit.svg" alt="" />
+                </div>
+                <div class="footer__slogan">
+                    <ul>
+                        <li class="footer__member-text">MEMBER OF PROTECH GROUP</li>
+                        <li class="footer__brand-desc">
+                            The most prestigious ticket booking website in Vietnam
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__divider">
+                    <hr />
+                </div>
+                <div class="footer__qr-list">
+                    <div class="footer__qr-item">
+                        <img src="assets/svg/icons/foooter/qr1.svg" alt="" />
+                    </div>
+                    <div class="footer__qr-item">
+                        <img src="assets/svg/icons/foooter/qr2.svg" alt="" />
+                    </div>
+                    <div class="footer__qr-item">
+                        <img src="assets/svg/icons/foooter/qr3.svg" alt="" />
+                    </div>
+                    <div class="footer__qr-item">
+                        <img src="assets/svg/icons/foooter/qr4.svg" alt="" />
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
+            <div class="footer__nav">
+                <ul class="footer__menu">
+                    <h5 class="footer__menu-title">About Us</h5>
+                    <li class="footer__menu-item"><a href="#">Introduction</a></li>
+                    <li class="footer__menu-item"><a href="#">Customer reviews</a></li>
+                    <li class="footer__menu-item">
+                        <a href="#">Operational Regulations</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#">Information privacy policy</a>
+                    </li>
+                    <li class="footer__menu-item"><a href="#">Partners</a></li>
+                    <li class="footer__menu-item"><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer__nav">
+                <ul class="footer__menu">
+                    <h5 class="footer__menu-title">Tutorials & Help</h5>
+                    <li class="footer__menu-item">
+                        <a href="#">Frequently asked questions</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#">Ticket booking guide</a>
+                    </li>
+                    <li class="footer__menu-item"><a href="#">Payment Guide</a></li>
+                    <li class="footer__menu-item"><a href="#">Review your order</a></li>
+                    <li class="footer__menu-item"><a href="#">Print e-tickets</a></li>
+                    <li class="footer__menu-item">
+                        <a href="#">Feedback about orders</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <div class="footer__contact-info">
+                    <span class="footer__phone">09 1900 5320</span>
+                    <p class="footer__hotline">Hotline 24/7</p>
+                    <p class="footer__company">
+                        PROSPERITY TOURISM AND TECHNOLOGY GROUP JOINT STOCK COMPANY
+                    </p>
+                    <p class="footer__address">
+                        No. 19 Alley 5, Do Nha Street, Tay Mo Ward, Nam Tu Liem District,
+                        Hanoi City, Vietnam
+                    </p>
+                </div>
+                <form class="footer__subscribe">
+                    <input type="email" class="footer__subscribe-input" placeholder="Enter your email" />
+                    <input type="submit" class="footer__subscribe-button" value="Subscribe" />
+                </form>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <span class="footer__copyright-text">©2023 Pro Tech Group</span>
+            <div class="footer__copyright-links">
+                <span class="footer__copyright-link"><a href="https://www.vemaybayso.vn">www.vemaybayso.vn</a></span>
+                <span class="footer__copyright-link"><a href="https://www.tickit.vn">www.tickit.vn</a></span>
+                <span class="footer__copyright-link"><a href="https://www.evoucher.vn">www.evoucher.vn</a></span>
+                <span class="footer__copyright-link"><a href="https://www.protravel.vn">www.protravel.vn</a></span>
+            </div>
+            <div class="footer__copyright-legal">
+                <span class="footer__copyright-legal-link"><a href="#">Privacy</a></span>
+                <span class="footer__copyright-legal-link"><a href="#">Terms & conditions</a></span>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollToTopBtn" class="scroll-to-top">↑</button>
 </body>
 <script src="./assets/js/filghtAddNew.js">
 
