@@ -299,6 +299,12 @@ td:not(td:last-child, th:not(th:last-child)) {
   align-items: center;
 }
 
+.flight-info_button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .airline {
   display: flex;
   align-items: center;
@@ -330,27 +336,88 @@ td:not(td:last-child, th:not(th:last-child)) {
 .departure,
 .arrival {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  align-items: end;
   flex-direction: column;
 }
 
-.time {
+.time_right {
   font-size: 18px;
   font-weight: bold;
   color: #0a7c79;
+  width: 100%;
+  text-align: start;
 }
 
-.location {
+.location_right {
   font-size: 14px;
   color: #0ebab5;
+  width: 100%;
+  text-align: start;
 }
 
-.date {
+.date_left {
   font-size: 12px;
   color: #0ebab5;
+  width: 100%;
+  text-align: end;
 }
 
+.time_left  {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0a7c79;
+  width: 100%;
+  text-align: end;
+}
+
+.location_left  {
+  font-size: 14px;
+  color: #0ebab5;
+  width: 100%;
+  text-align: end;
+}
+
+.date_right {
+  font-size: 12px;
+  color: #0ebab5;
+  width: 100%;
+  text-align: start;
+}
+
+.change-btn_1 {
+  background: none;
+  border: none;
+  background-color: #e63946;
+  color: #fff;
+  padding: 8px 16px;
+  width: 100px;
+  border-radius: 20px 0px 20px 0px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.change-btn_1:hover {
+  background-color: #eee;
+  color: #0A7C79;
+}
+.select_rank{
+    justify-content: center;
+    background-color: transparent;
+    color: #0a7c79;
+    width: 100px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1px solid red;
+}
+.samp_{color: #FF3C13; text-align: end; width: 100%; font-size: 14px; display: flex; gap: 10px; align-items: center;}
+.samp_1{color: #FF3C13; text-align: start; width: 100%; font-size: 14px;  display: flex; gap: 10px; align-items: center;}
+
+.roud_way{
+  padding-bottom: 27px;
+  margin: 10px;
+}
 .arrow {
   font-size: 18px;
   color: #e63946;
@@ -560,17 +627,15 @@ td:not(td:last-child, th:not(th:last-child)) {
     background-color: white;
     line-height: 70px;
     border-radius: 10px 10px 0px 0px;
-    position: sticky;
-    top: 0;
     z-index: 1;
     align-items: center;
   }
   
   .news__column-1 .news__heading span {
-    width: 30%;
+    width: 25%;
     text-align: center;
     font-size: 25px;
-    padding: 10px;
+    padding-left: 20px;
     font-weight: bold;
   }
   
@@ -580,6 +645,7 @@ td:not(td:last-child, th:not(th:last-child)) {
   }
   
   .news-section .news__column-1 .content {
+    background-color: #e4f9f9;
     padding: 20px;
   }
   
@@ -877,8 +943,8 @@ td:not(td:last-child, th:not(th:last-child)) {
   }
   
   .flight-card_11 {
-    /* margin: 20px; */
-    display: flex;
+    /* margin: 20px;  */
+    /* display: flex; */
     justify-content: space-between;
     align-items: center;
     background: #fff;
@@ -887,4 +953,74 @@ td:not(td:last-child, th:not(th:last-child)) {
     padding: 16px 24px;
     width: 100%;
     background-color: #fff;
+  }
+  .roule{
+    margin-top: 10px;
+  }
+
+  .button_detail{
+    justify-content: center;
+    background-color: transparent;
+    color: #0a7c79;
+    width: 100px;
+    /* margin-top: 30px; */
+    margin-left: 50px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1px solid red;
+  }
+
+
+  .button_detail:hover {
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .details {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .detail_gird {
+    display: flex;
+  }
+
+  .item_dev_gird_left{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #FF3C13;
+  }
+
+  .item_dev_gird_right{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  .price_vat{
+    width: 36%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  .flight-info_2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:75%;
+  }
+  .spam_text{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+  }
+  .bgc{
+    background-color: #e4f9f9;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .grid_flight_time_titile{
+    display: flex;
+
   }

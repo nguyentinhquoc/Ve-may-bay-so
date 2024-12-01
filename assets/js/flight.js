@@ -1,9 +1,7 @@
 $(document).ready(function(){
     $('.faq-item').click(function(){
-        // Toggle answer
         $(this).find('.faq-answer').slideToggle();
 
-        // Toggle arrow direction
         $(this).find('.arrow').toggleClass('down up');
     });
 });
