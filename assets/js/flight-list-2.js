@@ -37,16 +37,21 @@ document.querySelectorAll(".toggle-menu").forEach((toggleButton) => {
     }
   });
 });
-
 $(document).ready(function () {
-  $(".toggle-button").click(function () {
-    $(".details").slideToggle(300);
+  // Bắt sự kiện click trên các nút toggle
+  $(".toggle-button").on("click", function () {
+    // Tìm phần tử chi tiết gần nhất và toggle hiển thị
+    const $details = $(this).closest(".flight-card_11").find(".details");
 
-    const isDetail = $(this).html().includes('Chi tiết');
+    if ($details.length) {
+      $details.slideToggle(300);
+      const isDetail = $(this).html().includes('Chi tiết');
 
     $(this).html(isDetail 
       ? `Rút gọn <img src="./assets/svg/icons/Flight-list/down.svg" alt="">`
       : `Chi tiết <img src="./assets/svg/icons/Flight-list/right.svg" alt="">`);
+    }
   });
 });
+
 
