@@ -659,3 +659,7 @@ section {
   left: 6px;
   transform: rotate(45deg);
 }
+/*  */
+#departure-date {
+  margin-top: 8px !important;
+}

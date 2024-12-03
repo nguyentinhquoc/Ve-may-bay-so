@@ -287,6 +287,9 @@
   color: var(--color-primary);
   font-weight: 600;
 }
+.thongtinhanglykygui > div > div {
+  align-items: center;
+}
 .hanhkhach {
   font-size: 14px;
   flex: 1;

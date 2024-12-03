@@ -33,7 +33,7 @@
 }
 
 .box-shadow {
-  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card {
@@ -46,13 +46,12 @@
   position: absolute;
   top: 20px;
   right: 22px;
-  background-color: #FF5722;
+  background-color: #ff5722;
   color: #fff;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 10px;
 }
-
 
 .card .card__info {
   position: absolute;
@@ -149,8 +148,6 @@
   font-size: 12px;
 }
 
-
-
 .card-full__content {
   position: absolute;
   bottom: 10px;
@@ -204,7 +201,6 @@
 .news__column-3 .heading span {
   font-size: 12px;
 }
-
 
 .news__column-2,
 .news__column-3 {
@@ -302,6 +298,12 @@
   font-weight: bolder;
 }
 
+.card-infor > p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .news__column-2 .card-infor .card-description,
 .news__column-3 .card-description {
   font-size: 16px;
@@ -336,17 +338,16 @@
   width: 70%;
 }
 
-.news__column-2 .card_item_left>img,
-.news__column-3 .card_item_left>img {
+.news__column-2 .card_item_left > img,
+.news__column-3 .card_item_left > img {
   width: 100%;
   height: 75px;
   border-radius: 5px;
 }
 
-.news__column-2 .card_item_left>p {
+.news__column-2 .card_item_left > p {
   text-align: start;
 }
-
 
 .news__column-2 .card_item_right img,
 .news__column-3 .card_item_right img {
@@ -368,7 +369,7 @@
 .news__column-2 .card_item .card_item-footer button,
 .news__column-3 .card_item .card_item-footer button {
   color: white;
-  margin-top: 15PX;
+  margin-top: 15px;
 }
 
 .news__column-3 .card_item .card_item_right p {
@@ -405,7 +406,7 @@
   margin-bottom: 20px;
 }
 
-.ticket_card-event .d-flex .card_item .image>img {
+.ticket_card-event .d-flex .card_item .image > img {
   height: 200px;
   width: 100%;
   border-radius: 10px 10px 0px 0px;
@@ -418,11 +419,10 @@
 .ticket_card-event .d-flex .card_item .card_full-content .card-infor span {
   opacity: 0.5;
   font-size: 12px;
-
 }
 
 .ticket_card-event .d-flex .card_item h6 {
-  line-height: 2;
+  line-height: 1.7;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -449,7 +449,7 @@
 
 .booking-section {
   padding: 40px 100px;
-  background: linear-gradient(180deg, #01B5B6 0%, #004D4A 69.27%, #FF3C13 100%);
+  background: linear-gradient(180deg, #01b5b6 0%, #004d4a 69.27%, #ff3c13 100%);
   border-radius: 10px;
   color: white;
   text-align: center;
@@ -499,6 +499,7 @@
   height: 100px;
   border-radius: 50%;
   margin-bottom: 10px;
+  box-shadow: 2px 11px 13px rgba(0, 0, 0, 0.19);
 }
 
 #prevButton {
@@ -524,14 +525,14 @@
   color: #4a4a4a;
   padding: 20px;
 }
-.step-title-div{
+.step-title-div {
   height: auto;
   margin-bottom: 50px;
 }
 
 .step-number {
   font-size: 8rem;
-  color: #FF3C134D;
+  color: #ff3c134d;
   font-weight: bold;
   position: absolute;
   top: 10px;
@@ -540,9 +541,9 @@
   z-index: 0;
 }
 
-.title{
+.title {
   position: relative;
-  top:30px; 
+  top: 30px;
   left: 10px;
   z-index: 1;
   width: 170px;
@@ -550,20 +551,20 @@
 .step-icon {
   font-size: 2rem;
   margin-left: 20px;
-  color: #0A7C79;
+  color: #0a7c79;
   margin-bottom: 10px;
 }
 
 .step-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0A7C79;
+  color: #0a7c79;
   margin: 10px 0;
 }
 
 .step-description {
   font-size: 0.9rem;
-  color: #0A7C79;
+  color: #0a7c79;
   max-width: 200px;
   line-height: 1.5;
 

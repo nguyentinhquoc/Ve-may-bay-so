@@ -250,6 +250,7 @@
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
+  border: none;
 }
 .setting {
   background-color: var(--color-info);
