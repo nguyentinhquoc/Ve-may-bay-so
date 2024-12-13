@@ -197,6 +197,7 @@
 }
 #plan-destination-select {
   flex: 8;
+  background-color: #fff;
   border-radius: 10px;
   padding: 1rem;
   outline: none;
